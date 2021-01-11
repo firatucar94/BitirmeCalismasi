@@ -1,0 +1,44 @@
+\select@language {turkish}
+\contentsline {paragraph}{}{iii}{section*.3}
+\contentsline {paragraph}{}{iii}{section*.4}
+\contentsline {paragraph}{}{iv}{section*.5}
+\contentsline {paragraph}{}{iv}{section*.6}
+\contentsline {section}{\"ONS\"OZ}{v}{section*.6}
+\contentsline {section}{\relax \fontsize {12}{14.5}\selectfont \abovedisplayskip 12\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ \c SEK\.ILLER TABLOSU}{viii}{section*.7}
+\contentsline {section}{KISALTMALAR}{ix}{section*.7}
+\contentsline {section}{\numberline {1}G\.IR\.I\c S}{1}{section.1}
+\contentsline {section}{\numberline {2}PROGRAMLAMA}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Matlab}{4}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Matlab kullan\IeC {\i }m alanlar\IeC {\i }}{5}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}C\#}{6}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}.NET Framework nedir?}{7}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}C\# kullan\IeC {\i }m alanlar\IeC {\i }}{7}{subsubsection.2.2.2}
+\contentsline {section}{\numberline {3}RC4 UYGULAMASI NED\.IR ? KULLANIM ALANLARI NELERD\.IR ?}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}RC4 Nedir ?}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}RC4 Nas\IeC {\i }l \c Cal\IeC {\i }\c s\IeC {\i }r ?}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}RC4 G\"u\c cl\"u Y\"onleri}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}RC4 Kullan\IeC {\i }m Alanlar\IeC {\i }}{10}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Wired equivalent privacy}{10}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Wireless protected access}{12}{subsubsection.3.4.2}
+\contentsline {section}{\numberline {4}2B CAT MAP KAOT\.IK S\.ISTEM\.I}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1}2B Cat Map Nedir ? Nas\IeC {\i }l \c Cal\IeC {\i }\c s\IeC {\i }r ?}{13}{subsection.4.1}
+\contentsline {section}{\numberline {5}\c S\.IFRELEME \.I\c SLEMLER\.I}{16}{section.5}
+\contentsline {subsection}{\numberline {5.1}RC4 S\IeC {\i }n\IeC {\i }f\IeC {\i }n\IeC {\i }n Olu\c sturulmas\IeC {\i }}{16}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Form Ekran\IeC {\i }n\IeC {\i }n Tasarlanmas\IeC {\i }}{18}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Buton kullan\IeC {\i }m\IeC {\i }}{18}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}OpenFileDialog kullan\IeC {\i }m\IeC {\i }}{18}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}SaveFileDialog kullan\IeC {\i }m\IeC {\i }}{19}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Label kullan\IeC {\i }m\IeC {\i }}{19}{subsubsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.5}PictureBox kullan\IeC {\i }m\IeC {\i }}{19}{subsubsection.5.2.5}
+\contentsline {subsubsection}{\numberline {5.2.6}TextBox kullan\IeC {\i }m\IeC {\i }}{19}{subsubsection.5.2.6}
+\contentsline {subsection}{\numberline {5.3}\c Sifreleme \.I\c slemi}{20}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}\c Sifreli Metinin Kaydedilmesi}{23}{subsection.5.4}
+\contentsline {section}{\numberline {6}GER\.I D\"OND\"URME \.I\c SLEMLER\.I}{24}{section.6}
+\contentsline {subsection}{\numberline {6.1}Kaydedilen \c Sifreli Metinin Se\c cilmesi}{24}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Geri D\"ond\"urme \.I\c slemi}{24}{subsection.6.2}
+\contentsline {section}{\numberline {7}SONU\c CLAR VE \"ONER\.ILER}{26}{section.7}
+\contentsline {section}{\numberline {8}EKLER}{27}{section.8}
+\contentsline {subsection}{\numberline {8.1}EK-1}{27}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}EK-2}{29}{subsection.8.2}
+\contentsline {section}{KAYNAKLAR}{31}{figure.caption.34}
+\contentsline {section}{\"OZGE\c CM\.I\c S}{32}{section*.35}

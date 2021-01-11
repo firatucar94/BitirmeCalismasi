@@ -1,0 +1,39 @@
+
+\section{2B CAT MAP KAOTÝK SÝSTEMÝ}
+Projede görüntü þifreleme iþlemi yapýlýrken, þifrelemeden önce seçilen görüntü MATLAB'da 2B Cat Map kullanýlarak karýþtýrýlmýþtýr. Karýþtýrýlan görüntü daha sonra þifrelenmek üzere programda belli iþlemlere tabii tutulmuþtur.
+\subsection{2B Cat Map Nedir ? Nasýl Çalýþýr ?}
+Görüntü karýþtýrma permütasyon evresinde genellikle iki boyutlu üç tip kaotik harita kullanýlmaktadýr. Bunlar Standart Map, Cat Map ve Genelleþtirilmiþ Baker Map haritalarýdýr. Cat Map literatürde en yaygýn kullanýlan haritadýr. M x N boyutlu bir görüntü ve bu görüntüye ait piksel deðerlerinin koordinatlarý C={(x,y)| x,y =1,2..,N} olarak belirlenirse Cat Map aþaðýdaki gibi tanýmlanýr. \cite{k:2}
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=3cm]{catmap} }
+\caption{Cat map görüntü karýþtýrma algoritmasý}
+\label{6}
+\end{figure}  
+\newpage
+Þekil \ref{6}'de gösterilen denklemde Cat Map kontrol parametreleri olan p ve q pozitif tamsayýlardýr. (x,y) ve (x',y') deðerleri ise sýrasýyla koordinat deðerlerinin orjinal ve yeni pozisyonlarýdýr. Burada det(Q)=1 olduðundan alan korunur, yani herhangi bir koordinat birbiriyle çakýþmaz ve herhangi bir kayýp meydana gelmez. 
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=6cm]{lena} }
+\caption{Orjinal Lena görüntüsü}
+\end{figure}
+
+2B Cat Map, sýnýrlarý belirli bir alanda sürekli farklý koordinat deðerleri üreterek görüntüdeki piksellerin yerlerinin deðiþimini saðlamaktadýr. Yukarýdaki þekildeki Lena görüntüsü 2B Cat Map sistemine giriþ olarak uygulandýðýnda Þekil \ref{7}'deki gibi farklý þekillerde görüntü pikselleri karýþtýrýlabilmektedir. Görüntü piksellerinin karýþýmýndaki farklýlýk 2B Cat Map sisteminde bulunan p ve q parametlerinden kaynaklanmaktadýr. Þekil \ref{7}'de elde edilen görüntülerde p=1 ve q=1 seçildiðinde (a) görüntüsü, p=5 ve q=7 seçildiðinde (b) görüntüsü, p=22 ve q=30 seçildiðinde (c) görüntüsü, p=401 ve q=401 seçildiðinde (d) görüntüsü elde edilmektedir. Bu deðerlerin deðiþiminden de anlaþýlacaðý üzere p ve q deðerleri arttýrýldýkça görüntüdeki pikseller daha homojen karýþmaktadýr. 
+\newpage
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=12.5cm,height=8cm]{lena2} }
+\caption{Karýþtýrýlmýþ Lena görüntüleri}
+\label{7}
+\end{figure}
+Piksellerin koordinatlarýnýn deðiþmesi, görüntü þifreleme iþlemlerinde büyük kolaylýk saðlamaktadýr. Orjinal görüntüde bulunan bitiþik piksel deðerleri birbirine çok yakýn olacaðýndan, bu kýsýmlar þifrelendiðinde birbirine yakýn deðerler oluþturabilmektedir. Fakat 2B Cat Map uygulanan görüntüde bitiþik piksel deðerleri farklýlaþacaktýr. Bu sayede daha saðlam bir þifreleme yapýlabilecektir. Görüntü karýþtýrma iþlemleri tamamlandýktan sonra görüntünün tekrar eski haline getirilmesi Þekil \ref{8}'deki gibi tanýmlanýr. 
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=3cm]{catmapreverse} }
+\caption{2B Cat Map ile karýþtýrýlan görüntünün geri dönüþtürülmesi}
+\label{8}
+\end{figure}
+ 

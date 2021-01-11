@@ -1,0 +1,35 @@
+\section{GÝRÝÞ}
+Kriptoloji, saklanmasý veya gönderilmesi gereken mesajlarýn, bilgilerin bir anahtarla belirli bir sisteme göre þifrelenmesi, þifrelenen mesajýn anahtarý kullanýlarak alýcý tarafýndan deþifre edilmesidir. Kýsaca þifre bilimine kriptoloji denilmektedir. Kriptografi ve kripto analiz olmak üzere iki dala ayrýlýr. Günümüzde teknoloji çok hýzlý geliþtiðinden güvenlik sorunlarýný da beraberinde getirmektedir. Özel þirketler, askeri kurumlar, devlet kurumlarý vb. birçok birim arasýndaki iletiþimin güvenliðini saðlamak için kriptoloji alanýndaki geliþmeler büyük önem arz etmektedir. Bu amaçla güvenlik zaafiyetlerini engellemek ve bunu yaparken hýzlý iletiþimi de saðlamak amacýyla birçok kriptografik yöntem geliþtirilmektedir. \cite{k:2} 
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=4.7cm]{kripto}}
+\caption{Kriptografi}
+\end{figure}
+Kriptografik algoritmalar gizlilik, bütünlük, süreklilik, kimlik denetimi, inkar edilememezlik ve izlenebilirlik gibi güvenlik protokollerinin bileþenleri haberleþmede güvenliði saðlamak amacýyla kullanýlýrlar. Kriptografik sistemler simetrik anahtarlý, asimetrik anahtarlý olmak üzere ikiye ayrýlýr fakat anahtarsýz þifrelemede mevcuttur. Simetrik sistemlerde bir gizli anahtar mevcuttur, bu anahtarýn gönderici ve alýcý tarafta bulunmasý gerekmektedir. Asimetrik sistemlerde gizli bir anahtara ek olarak, açýk anahtar mevcuttur. Bu sistemlerde açýk anahtar ve gizli anahtarýn ikisi ele geçirildiðinde þifre çözme iþlemini yapmak mümkündür. Bu sayede, açýk anahtarýn üçüncü bir þahýs tarafýndan ele geçirilmesi þifrelenen bilgilerin ele geçirilmesi açýsýndan bir tehdit oluþturmamaktadýr. 
+\newpage
+Kaos teorisi sonuçlarý tahmin edilemeyen sistemleri açýklayan bilimsel bir ilkedir. Genel anlamda 1980'li yýllarda araþtýrýlmýþtýr. Bir sigara dumanýnýn havada yaptýðý þekiller düzensiz ve baðýmsýz deðildir. Sigaranýn bu dinamikleri ortamdaki birçok etkene ve parametreye baðlýdýr. Ancak bu parametre ve bilgiler çok fazladýr ve bunlarý inceleyip net olarak bir kanýya varmak imkansýzdýr. Sigara dumanýnýn þeklini bulunan ortamdaki rüzgar, sýcaklýk, basýnç gibi fiziksel büyüklükler etkileyebilir ve bu faktörlerin birbirine baðlý olabileceði de hesaba katýldýðýnda durum tahmin edilemeyen bir hale gelir. 
+
+Kaotik sistemlerin belirli bir frekans aralýðýnda bulunduðu ve bu sýnýrlar içerisinde hareketlerinin belirlenemez olduðu Lorenz tarafýndan saptanmýþtýr. Kaotik sistemleri, belirli bir alana çeken bu yapýlara kaotik çekerler adý verilmektedir. Bu çekerlere bakýldýðýnda bu çekerleri meydana getiren eðrilerin, belirli sayýdaki parametreler dizisinin, zaman düzleminde hiçbir zaman iki kez ayný rotayý izlemediði ve bu rotalar arasýnda kesinlikle küçük de olsa bir farklýlýk olduðu görülmüþtür. Çekerlerin oluþturduðu eðrilerin bu özelliðinden dolayý fraktal yapýda olduðu söylenebilir. 
+
+Kaotik sistemler görüntü þifreleme uygulamalarýnda oldukça yoðun kullanýlmaktadýr. Bilinen kaotik sistemlerin kullanýldýðý ve baþarým ve güvenlik bakýmýndan oldukça iyi sonuçlar elde edildiði görülmektedir. Ayrýca birden fazla kaotik sistem kullanýlmasý bu sistemlerin baþlangýç deðerlerine hassas baðlýlýðý ve þifrelemede kullanýlan parametrelerin fazla olmasý güvenlik seviyesini oldukça arttýrmaktadýr. Bu sayede þifrelenen görüntünün istenmeyen þahýslar tarafýndan ele geçirilmesi, þifrelemede kullanýlan parametreleri bilmediði taktirde, neredeyse imkansýz hale gelmektedir. 
+
+Görüntü þifrelemede kaotik sistemlerin kullanýlmasý, saðladýðý bazý üstünlüklerden ve analiz yöntemlerine karþý gösterdiði yüksek dayanýklýktan kaynaklanmaktadýr. Bu analizler anahtar güvenliði, histogram analizi, anahtar hassaslýðý, görüntüdeki bitiþik piksellerin birbiri ile olan iliþki katsayýsý, bilginin düzensizlik analizi, þifreleme ve þifre çözme hýzýdýr. Bu sayede, yapýlan her analize karþý doðrudan daha baþarýlý olduðu söylenemese de, genel anlamda kullanýlan geleneksel simetrik ve asimetrik þifreleme algoritmalarýna karþý üstünlük saðladýðý görülmektedir. 
+  
+
+RC4; SSL, WEP, WPA, gibi güncel pekçok uygulamada kullanýlan bir akýþ þifreleme uygulamasýdýr. RC4 'ün genel olarak kullanýlan algoritmasý Þekil \ref{1}'deki gibidir. \cite{k:1}
+
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=6cm]{RC} }
+\caption{RC4 algoritmasý}
+\label{1}
+\end{figure}
+
+Projede metin ve ya görüntü seçimine göre seçilen belge RC4 ile þifrelendi. Bu þifreleme iþlemi gerçekleþtirilirken seçilen belgenin görüntü olmasý durumunda önce Cat Map ile karýþtýrýldý ve ardýndan RC4 uygulandý. Cat Map ile görüntünün karýþtýrýlmasý iþlemi ileriki bölümlerde detaylý bir þekilde anlatýlmýþtýr. 
+
+RC4 ile þifreleme iþleme yapýlýrken bir takým gereksinimler vardýr. Bunlardan bir tanesi kullanýcý tarafýndan bir anahtar girilmesidir. Bu þart þifreleme için olmazsa olmaz bir kuraldýr. Çünkü þifreleme iþlemleri yapýlýrken bu girilen anahtar kullanýlarak diðer bölümlerde detaylý bir þekilde anlatýlacak olan bazý iþlemler yapýlacaktýr. Bu iþlemler KSA ve PRGA'dýr. Bu iki adýmýn detaylý anlatýmlarý ve kod kýsýmlarý ilerleyen bölümlerde anlatýlacaktýr.
+
+KSA ve PRGA adýmlarý yapýldýktan sonra seçilen belgenin tipine göre gerekli iþlemler yapýldýktan sonra þifreleme iþlemi gerçekleþtirilecektir.
+

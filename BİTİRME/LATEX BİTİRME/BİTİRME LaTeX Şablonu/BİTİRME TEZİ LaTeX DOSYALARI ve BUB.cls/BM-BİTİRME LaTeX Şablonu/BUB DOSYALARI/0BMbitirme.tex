@@ -1,0 +1,33 @@
+%%%%%%%%Bilecik Þeyh Edebali Üniversitesi Mühendsilik Fakültesi%%%% 
+%%%%%%%%Bilgisayar Mühendisliði Bitirme Çalýþmasý%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%LaTeX Class%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{BUB}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\shorthandoff{=}%grafik komutlarýnda babelden kaynaklanan hatayý engeller.
+%%%%%%%%%%%%%%%%%%%%%%Bitirme Çalýþmasýnýn Bölümleri%%%%%%%%%%%%%%%%%%%%%%%
+\include{1diskapak}
+\include{2ickapak}
+\pagenumbering{roman}%romen rakamlarý kullanýlmaya baþlanýyor.
+\setcounter{page}{2}% sayfa numarasýný ii'den baþlatýlýyor.
+\include{3bildirim}
+\include{4ozetabstract}
+\include{5onsoz}
+\include{6icindekiler}
+\include{7sekiller_tablosu}
+%\include{8cizelgeler_tablosu}
+\include{9simge_kisaltma}
+\pagenumbering{arabic}%Sayfa numaralamasýný arap rakamlarýyla yapar.
+\setcounter{page}{1}%sayfa numarasýný 1'den baþlatýr.
+\include{10giris}
+\include{11bolum1}
+\include{12bolum2}
+\include{13materyal_yontem}
+\include{14bulgu_tartisma}
+\include{15sonuc_oneri}
+\include{16ekler}
+\include{17kaynaklar}
+\include{18ozgecmis}
+\shorthandon{=}
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%BÝTTÝ%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

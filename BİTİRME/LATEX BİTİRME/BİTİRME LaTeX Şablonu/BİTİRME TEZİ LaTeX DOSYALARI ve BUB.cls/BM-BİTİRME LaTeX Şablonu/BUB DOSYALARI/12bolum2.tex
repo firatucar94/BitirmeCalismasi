@@ -1,0 +1,61 @@
+\section{RC4 UYGULAMASI NEDÝR ? KULLANIM ALANLARI NELERDÝR ?}
+Bu bölümde projede kullanýlan þifreleme uygulamasý olan RC4 uygulamasý tanýtýlmýþ ve kullaným alanlarý hakkýnda bilgi verilmiþtir. 
+\subsection{RC4 Nedir ?}
+Ronald Rivest tarafýndan geliþtirilen RC4 þifreleme algoritmasý, paylaþýlan bir anahtarýn güvenli bir þekilde deðiþtirilmesini gerektiren paylaþýlan bir anahtar akýþý þifreleme algoritmasýdýr. Simetrik anahtar algoritmasý, þifreleme ve þifre çözme için ayný þekilde kullanýlýr. Böylelikle veri akýþý, üretilen anahtar dizisiyle XOR yapýlýr. Anahtar dizisine dayanan durum giriþlerinin ardýþýk deðiþimlerini gerektirdiði için algoritma seri haldedir. Dolayýsýyla uygulamalar çok hesaplamayla yoðun olabilir. \cite{k:1} 
+\subsection{RC4 Nasýl Çalýþýr ?}
+RC4 þifreleme algoritmasýnda anahtar akýþý, kullanýlan basit metinden tamamen baðýmsýzdýr. Burada girdilerin her biri 0 ile 255 arasýndaki sayýlarýn bir permütastonudur. Permütasyon deðiþken uzunluk anahtarýnýn bir fonksiyonudur. Ýki sayaç vardýr ve her ikisi de algoritmada kullanýlan 0'dan baþlamýþtýr. 
+
+Algoritma, anahtar kurulum ve þifreleme olmak üzere iki aþamada çalýþýr. Þekil \ref{2}'de gösterilen anahtar kurulumu, bu þifreleme algoritmasýnýn ilk ve en zor aþamasýdýr. N-bit anahtar kurulumu sýrasýnda (N anahtar uzunluðudur) þifreleme anahtarý, iki diziyi, durum ve anahtarý ve karýþtýrma iþlemlerini kullanarak bir þifreleme deðiþkeni oluþturmak için kullanýlýr. Bu þifreleme iþlemleri baytlarýn deðiþtirilmesi, modulo iþlemleri ve diðer formüllerden oluþur. Bir modulo iþlemi, bölmeden kalaný bulmak için kullanýlýr.   
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=5cm]{RC2} }
+\caption{Anahtar oluþturma}
+\label{2}
+\end{figure}
+Algoritma, 256 baytlýk bir durum tablosunu baþlatmak için 1 ile 256 bayt arasýnda deðiþken uzunluk anahtarý kullanýr. Durum tablosu daha sonra Þekil \ref{3}'deki gibi sahte rasgele bayt üretimi için ve daha sonra þifreli metni vermek üzere düz metinle XOR yapýlan bir sahte rasgele akýþ oluþturmak için kullanýlýr. Durum tablosundaki her bir öðe en az 1 kez takas edilir. 
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=2.5cm]{RC3} }
+\caption{Anahtar akýþý oluþturma}
+\label{3}
+\end{figure}
+\newpage 
+\subsection{RC4 Güçlü Yönleri}
+RC4 algoritmasýnýn güçlü yönleri aþaðýda belirtildiði gibidir.
+\begin{itemize}
+\item Tabloda herhangi bir deðerin nerede olduðunu bilmenin zorluðu.\item Tablodaki hangi konumun dizideki her bir deðeri seçmek için kullanýldýðýný bilmenin zorluðu.\item Belirli bir RC4 anahtarýnýn bir kez kullanýlmasý.\item Þifreleme DES'den 10 kat daha hýzlý olmasý.
+\end{itemize}
+\subsection{RC4 Kullaným Alanlarý}
+RC4; WEP, WPA gibi güncel bir çok uygulamada kullanýlmaktadýr. 
+\subsubsection{Wired equivalent privacy}
+WEP, þifreleme ve kimlik doðrulama için IEEE 802.11 tarafýndan belirlenmiþtir. Standart, WEP'i iki ana bölüm olarak tanýmlamýþtýr. Ýlki kimlik doðrulama, ikincisi þifreleme kýsmýdýr. WEP'in hedefleri þunlardýr :
+\begin{itemize}
+\item Doðru WEP anahtarý bulunmadýðý için yetkili kullanýcýlarýn eriþmesini engelleyerek ulaþýlan eriþim kontrolü \item Gizlilik, WLAN veri akýþýný þifrelemek için WEP anahtarý kullanýlarak elde edilir ve yalnýzca doðru WEP anahtarýna sahip olanlar þifresini çözebilir
+\end{itemize} 
+\newpage
+WEP tarafýndan kullanýlan þifreleme iþlemi Rivest Cipher 4 (RC4)'tür. Saldýrganlýktan ve ya yetkisiz veri deðiþikliðinden korumak için kullanýlan  ICV oluþturmak için düz metin üzerinde CRC-32 kullanan bir bütünlük algoritmasýda vardýr. Þekil \ref{4}'de WEP'in þifreleme algoritmasý gösterilmiþtir. \cite{k:5}
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=6cm]{WEP} }
+\caption{WEP þifreleme algoritmasý}
+\label{4}
+\end{figure}
+Þekil \ref{5}'de ise WEP þifrelemesinin geri dönüþüm algoritmasý verilmiþtir.
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=6cm]{WEP2} }
+\caption{WEP þifreleme geri dönüþüm algoritmasý}
+\label{5}
+\end{figure}
+\newpage
+\subsubsection{Wireless protected access}
+IEEE 802.11'i kablosuz að standardý, LAN'ý güvenliðindeki geliþmeleri belirtir. Yeni IEEE 802.11'i standardý onaylanýrken, kablosuz ürün satýcýlarý WPA olarak bilinen, çeþitli sistemlerin birlikte çalýþmasýna olanak veren geçici bir standart üzerinde anlaþmýþtýr. Geniþ þekilde kullanýlan bu iki tip WPA standardý WEP'in zayýf yönlerini kapatmak için geçici olarak oluþturulmuþtur. Mevcut cihazlar güncellenirse bu protokolü kullanabilir. Günümüzdeki cihazlarda desteði eklenmiþ durumdadýr. WPA'nýn WEP'e tercih edilmesinde üç önemli sebep vardýr. Bunlar;
+\begin{itemize}
+\item 802.1X/EAP tabanlý karþýlýklý asýllama saðlamaktadýr. \item WEP'e göre daha güçlü bir þifreleme yöntemi olan TKIP'i desteklemektedir. \item Veri bütünlüðü için MIC yöntemini kullanmaktadýr.
+\end{itemize} 
+
+TKIP, çokça tatbik edilen yeni þifreleme protokolüdür. TKIP'in geliþtirilmesindeki en büyük etken, WEP tabanlý donanýmýnýn güvenliðinin arttýrýlmasý ve güncellenmesidir. Genel olarak, WEP kullanan donanýmlarýn yonga setleri RC4 þifreleme için donaným desteði saðladý. Donanýma yoðun uygulanan þifreleme ile yazýlým donaným ve firmware güncellemeleri geri kalanýný mümkün kýlmýþtýr. TKIP, WEP'in temel yapýsýna ve iþlemlerine sahiptir. WEP tabanlý çözümlere karþýlýk bir yazýlým güncellemesi olarak tasarlanmýþtýr. Esas olarak WEP kusurlu olarak gösterildiði için protokol onu WEP'ten ayýrabilmek için yeniden adlandýrmýþtýr. TKIP yukarýda belirtildiði gibi RC4 akýþ þifrelemesini de kullanýr. Sebebi WPA tam bir güvenlik standardý olarak geliþmemiþtir. \cite{k:6} 

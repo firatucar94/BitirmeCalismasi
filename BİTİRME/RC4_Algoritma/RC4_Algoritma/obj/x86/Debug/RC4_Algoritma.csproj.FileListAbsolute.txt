@@ -1,0 +1,17 @@
+c:\users\firat uçar\documents\visual studio 2010\Projects\RC4_Algoritma\RC4_Algoritma\bin\Debug\RC4_Algoritma.exe
+c:\users\firat uçar\documents\visual studio 2010\Projects\RC4_Algoritma\RC4_Algoritma\bin\Debug\RC4_Algoritma.pdb
+c:\users\firat uçar\documents\visual studio 2010\Projects\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.csprojResolveAssemblyReference.cache
+c:\users\firat uçar\documents\visual studio 2010\Projects\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.Form1.resources
+c:\users\firat uçar\documents\visual studio 2010\Projects\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.Properties.Resources.resources
+c:\users\firat uçar\documents\visual studio 2010\Projects\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.csproj.GenerateResource.Cache
+c:\users\firat uçar\documents\visual studio 2010\Projects\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.exe
+c:\users\firat uçar\documents\visual studio 2010\Projects\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.pdb
+E:\BİTİRME\RC4_Algoritma\RC4_Algoritma\bin\Debug\RC4_Algoritma.exe
+E:\BİTİRME\RC4_Algoritma\RC4_Algoritma\bin\Debug\RC4_Algoritma.pdb
+E:\BİTİRME\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.csprojAssemblyReference.cache
+E:\BİTİRME\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.Form1.resources
+E:\BİTİRME\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.Properties.Resources.resources
+E:\BİTİRME\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.csproj.GenerateResource.cache
+E:\BİTİRME\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.csproj.CoreCompileInputs.cache
+E:\BİTİRME\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.exe
+E:\BİTİRME\RC4_Algoritma\RC4_Algoritma\obj\x86\Debug\RC4_Algoritma.pdb

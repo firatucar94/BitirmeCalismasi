@@ -1,0 +1,57 @@
+\section{EKLER}
+Bu proje sürecinde, proje konusuna dahil olmayan Runge Kutta yönteminin MATLAB ortamýnda uygulamasý yapýlmýþtýr. Runge Kutta yöntemi EK-1'de, rapor içerisinde konusu ve uygulamasý geçen fakat içeriðindeki kod kýsmý hakkýnda çok fazla bilgi verilmeyen MATLAB ortamýnda Cat Map ile görüntü karýþtýrma uygulamasýnýn kodu EK-2'de verilmiþtir.
+
+\subsection{EK-1}
+Sayýsal analizde Runge Kutta yöntemleri, adi diferansiyel denklemlerin çözüm yaklaþýmlarý için açýk yinelemeli yöntemler ailesinin önemli bir tipidir. Bu yöntem 1900'lü yýllarda C. Runge ve M. W. Kutta adlý matematikçiler tarafýndan geliþtirilmiþtir. 4. dereceden klasik Runge Kutta yöntemi RK4 veya Runge-Kutta yöntemi olarak adlandýrýlýr. Bu yöntem sýkça kullanýlýr. 4. dereceden Runge Kutta yöntemi aþaðýdaki Þekil \ref{25}'de gösterildiði gibi tanýmlanýr.
+
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=4cm]{runge2} }
+\caption{Runge Kutta yöntemi}
+\label{25}
+\end{figure}
+\newpage
+Böylece bir sonraki deðer, o anki deðerine ve aralýðýn büyüklüðüyle tahmini eðimin çarpýmýnýn eklenmesiyle elde edilir. Bu eðim, eðimlerin aðýrlýklý ortalamasýdýr. 
+\begin{itemize}
+\item[\textbf{k1}] aralýðýn baþlangýcýndaki eðimdir. 
+\item[\textbf{k2}] aralýðýn orta noktasýndaki eðimdir. 
+\item[\textbf{k3}] yine orta noktadaki eðimdir. Ancak \textbf{k2} eðiminden elde edilir. 
+\item[\textbf{k4}] aralýðýn sonundaki eðimdir ve \textbf{k3} eðiminden yararlanýlarak bulunur.
+\end{itemize}
+
+Runge Kutta yönteminin MATLAB kodu Þekil \ref{26}'de, ekran çýktýsý ise Þekil \ref{27}'de gösterilmiþtir.
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=8cm]{runge} }
+\caption{Runge Kutta yöntemi MATLAB kodu}
+\label{26}
+\end{figure}
+\newpage
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=6cm]{runge3} }
+\caption{Runge Kutta yöntemi ekran çýktýsý}
+\label{27}
+\end{figure}
+
+\subsection{EK-2}
+MATLAB ile 2B Cat Map görünrü karýþtýrma ve görüntüyü geri döndürme kodlarý aþaðýda Þekil \ref{28} ve Þekil \ref{29}'de verilmiþtir.
+
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=8cm]{catmaprgb} }
+\caption{2B Cat Map ile görüntü karýþtýrma}
+\label{28}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=8cm]{catmaprgbreverse} }
+\caption{2B Cat Map ile karýþtýrýlan görüntünün reverse edilmesi}
+\label{29}
+\end{figure}

@@ -1,0 +1,124 @@
+\section{ÞÝFRELEME ÝÞLEMLERÝ}
+Bu bölümde C\# programý ile RC4 þifrelemesi yapýlýrken programýn sadece þifreleme aþamalarý ve kodlarý anlatýlmýþtýr. 
+\subsection{RC4 Sýnýfýnýn Oluþturulmasý}
+Þifreleme iþlemlerine baþlamadan önce C\# 'da RC4 adý verdiðimiz bir sýnýf oluþturuyoruz. Bu sýnýfta RC4 algoritmasýnýn kullanýlacaðý þifreleme iþlemleri bulunmaktadýr. RC4 sýnýfýnda kullanýlmak üzere dýþarýdan anahtar ve þifrelenecek (ve ya geri döndürülecek) metin alýnmaktadýr. Ýlk olarak sýnýfýmýzda dýþarýdan alýnan bu iki deðer set ve get edilir. Daha önce anlatýldýðý gibi RC4 algoritmasý iki farklý aþamadan oluþmaktadýr. Bu sýnýfýmýz içinde ilk olarak sbox oluþumundan bahsedeceðiz. Sbox bizim bu sýnýfta oluþturduðumuz bir dizi olup, þifreleme iþlemleri gerçekleþirken bu dizi baz alýnacaktýr. Sbox girilen anahtara göre Þekil \ref{9}'deki gibi oluþturulmaktadýr.
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=5cm]{RC2} }
+\caption{Sbox oluþumu}
+\label{9}
+\end{figure}
+Þekil \ref{9}'de görülen algoritmayý açýklayacak olursak; algoritma gereði döngü 256'ya kadar gitmektedir. Bunun için N deðiþkeni, RC4 sýnýfýnýn baþýnda tanýmlanmýþ olup, tüm program boyunca algoritmanýn gereði olarak sabit deðer  256 tanýmlanmýþtýr. Sbox oluþumu için kullanýcýnýn girdiði anahtar kelime kullanýlarak yeni bir dizi oluþturulmuþtur. For döngüsü ile anahtarýn harflarinin int tipindeki deðerleri, anahtar kelimenin uzunluðuyla mod alýnarak 256 boyutlu bir yeni dizi oluþturmaktadýr. Ayný for döngüsü içinde sbox'da oluþturulmaktadýr. Diðer for döngüsünde yine 256'ya kadar algoritma gereði ilk olarak 0 olarak tanýmlanan b deðeri, sbox deðeri ve yeni dizinin deðerleri toplanarak deðiþtirme iþlemleri uygulanýr. Böylelikle ilk olarak 1'den baþlayýp 256'ya kadar deðer alan sbox yeni deðerlerini almýþ olur. Böylelikle iki aþamadan meydana gelen RC4'ün ilk aþamasý tamamlanmýþ olur.
+
+RC4'ün algoritmasýnda bulunan ikinci aþama ise Sifrele() metodu ile tanýmlanmýþtýr. ilk aþamada üretilen sbox Sifrele() metodunun en baþýnda çaðýrýlýr ve çeþitli iþlemler ile Þekil \ref{10}'deki algoritmadaki gibi kullanýlýr. 
+
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=2.5cm]{RC3} }
+\caption{Þifreleme aþamasý}
+\label{10}
+\end{figure}
+Þekil \ref{10}'deki algorima Sifrele() metodu ile birlikte kullanýlýrken iþlem kolaylýðý ve performans açýsýndan StringBuilder sýnýfý kullanýlmýþtýr. RC4 algoritmasýnýn genel yapýsýnda bulunan gerekliliklerden ötürü yukarýda da görüldüðü gibi bazý mod alma iþlemleri ve yer deðiþtirme iþlemleri uygulanmýþtýr. En sonda oluþturulan  deðer ile þifrelenecek ve ya geri döndürelecek metod XOR iþlemine girer. Böylelikle þifrelenmeden önceki son aþama olan bu aþamada dönüþtürülmeden önce þifrelenmiþ deðerler belirlenmiþ olur.
+
+RC4 sýnýfýnda StrToHexStr ve HexStrToStr olmak üzere iki metod daha bulunmaktadýr. Fakat bu metodlar form ekranýndaki butonlara týklandýkça kullanýlacaðý için daha sonra bahsedilecektir. 
+\newpage
+\subsection{Form Ekranýnýn Tasarlanmasý}
+Bu bölümde form ekranýnda bulunan Toolbox'larýn neler olduðu, ne amaçla form ekranýnda bulunduklarý ve form ekranýndaki yerleþimleri hakkýnda bilgi verilecektir. Öncelikle, form ekranýnda bulunan Toolbox'lar aþaðýdaki gibidir:
+\begin{itemize}
+\item Buton \item OpenFileDialog \item SaveFileDialog \item Label \item PictureBox \item TextBox
+\end{itemize}
+\subsubsection{Buton kullanýmý}
+Form ekranýnda birden fazla buton kullanýlmýþtýr. Kullanýlan bu butonlar þifrelenecek belgeyi seçmede, seçilen belgeyi þifrelemede, þifrelenen belgeyi geri seçmede, seçilen belgeyi geri döndürmede ve kayýt iþlemlerinde kullanýlmaktadýr.
+\subsubsection{OpenFileDialog kullanýmý}
+OpenFileDialog kullanýmý þifrelenecek belgeyi seçmek için pencere açýlmasýnda ve kayýt iþlemlerinde kayýt yerinin belirlenmesi için pencere açýlmasýnda kullanýlmaktadýr.
+\subsubsection{SaveFileDialog kullanýmý}
+SaveFileDialog adýnýn Türkçe karþýlýðýndanda anlaþýlacaðý gibi kayýt iþlemlerinin yapýlmasý için gereklidir. Þifrelenen metni belge haline dönüþtürüp kaydetme iþleminde ve þifrelenmiþ metinin geri döndürülüp asýl haline ulaþtýktan sonra kayýt etme iþlevlerinde kullanýlmaktadýr.
+\subsubsection{Label kullanýmý}
+Form ekranýnda gerekli görülen yerlere baþlýk eklemek için kullanýlmaktadýr.
+\subsubsection{PictureBox kullanýmý}
+Form ekranýnda þifrelenecek belgeyi seçerken, seçilen belgenin bir görüntü olmasý halinde pictureBox ekranýnda görüntülenmesi için kullanýlmaktadýr.
+\subsubsection{TextBox kullanýmý}
+Form ekranýnda kullanýcý tarafýndan girilecek olan anahtar kelimeyi yazmada, gerek belge olarak, gerekse kullanýcý tarafýndan þifrelenecek bir metin girilmesi için ve þifrelenmiþ metnin görüntülenmesi için kullanýlmaktadýr.
+\newpage
+Tüm bu Toolbox'larýn kullanýmý sonucunda form ekraný Þekil \ref{11}'deki gibi  meydana gelmiþtir.
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=6cm]{form} }
+\caption{Form ekraný}
+\label{11}
+\end{figure}
+\subsection{Þifreleme Ýþlemi}
+RC4 sýnýfýnýn ve form ekranýnýn oluþumundan sonra þifreleme için gerekli kodlarýn yazýlmasýnda bir engel kalmamýþtýr. Ýlk  olarak þifreleme yapabilmek için eðer klavyeden bir metin girilerek þifreleme yapýlmak istenmiyorsa þifreleme yapabilmek için bir dosya seçilmelidir. Bu dosyayý seçmek için form ekranýnda bir buton oluþturulmuþtur. ÞÝFRELENECEK DOSYAYI SEÇ butonu ile þifrelenmesi istenen dosya Þekil \ref{12}'de gösterildiði gibi seçilmektedir.
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=6cm]{filedialog} }
+\caption{Þifrelenecek dosyanýn seçilmesi}
+\label{12}
+\end{figure}
+\newpage
+Bu seçim iþlemi OpenFileDialog kullanýlarak gerçekleþtirilmektedir. Dosya seçilirken metin ve görüntü þifrelemesi yapýlacaðýndan ötürü çýkan sonuçlar filtrelenmiþtir. Sadece .jpg, .bmp ve .txt dosyalarý görüntülenecektir. Try catch yapýsý kullanýlarak seçilen dosyanýn metin ve ya görüntü olmasýna göre ayrý ayrý yapýlacak iþlemler belirlenmiþtir. Eðer seçilen belge bir görüntü ise bu görüntünün þifrelenebilmesi için byte tipine dönüþtürülmesi gerekmektedir. Bunun için seçilen görüntü ImageToBase64 metoduna gönderilerek görüntünün byte tipine çevrilmesi saðlanýr. Ardýndan byte tipine çevrildikten sonra deðerler þifrelenmek için þifreleme textBox'ýna  yazdýrýlýr. Görüntünün þifrelenmeden önce gönderildiði ImageToBase64 metodu Þekil \ref{13}'deki gibi verilmiþtir. \cite{k:7}
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=4cm]{tobase64} }
+\caption{ImageToBase64 metodu}
+\label{13}
+\end{figure} 
+MemoryStream sýnýfý kullanýlarak yapýlan bu dönüþüm sonucunda string tipinde çýkan sonuç þifrelemenin yapýlacaðý textBox'a yazdýrýlýr. Bu aþamadan sonra þifreleme yapabilmek için ÞÝFRELE butonu devreye girer.
+\newpage
+Form ekranýnda bulunan ÞÝFRELE butonuna basarak þifreleme iþlemi baþlar. Butona týkladýktan sonra Þekil \ref{14}'de þifreleme ekranýndaki metin þifrelenerek þifrelenmiþ alana yazdýrýlýr. 
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=13.5cm,height=8cm]{sifrelebuton} }
+\caption{Þifreleme iþlemi}
+\label{14}
+\end{figure}
+ÞÝFRELE butonunun içinde bulundurduðu kodda öncelikle kullanýcý tarafýndan girilmesi zorunlu olan anahtarýn girilip girilmediði kontrol edilir. Eðer bu alan boþ býrakýlmýþ ise Message.Show ile bir hata mesajý gösterilir ve þifreleme anahtarýnýn boþ geçilemeyeceði bildirilir. Eðer þifreleme anahtarý olmasý gerektiði gibi girilmiþ ise öncelikle RC4 sýnýfýndan bir nesne oluþturulur ve bu sýnýfa girilen þifreleme anahtarý ve þifrelenmek için oluþturulan TextBox'daki metin gönderilir. RC4 sýnýfýnda meydana gelen iþlemler sonucunda çýkan sonuç Hex tipine çevrilmek üzere StrToHexStr metoduna gönderilir ve çevrilen deðer þifreli metinin gösterilmesi için oluþturulan TextBox'a yansýtýlýr.
+
+Þifrelenmek üzere gönderilen metin farklý tiplerde yansýtýlabilir. Fakat yapýlan araþtýrma sonucu en yaygýn kullanýmý Hex tipi olduðundan burada þifreli metin Hex tipinde gösterilmiþtir. Hex tipine çevirme iþlemi Þekil \ref{15}'de gösterildiði gibidir.
+\newpage
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=3.8cm]{strtohex} }
+\caption{Þifrelenen metinin stringden hex tipine dönüþümü}
+\label{15}
+\end{figure}  
+Bu dönüþüm iþlemi yapýlýrken yine kolaylýk ve performans açýsýndan StringBuildir sýnýfý kullanýlmýþtýr. Burada gönderilen metin int tipine çevrildikten sonra StringBuilder sýnýfýna ait string.Format metodu ile hex tipinde gösterilmiþtir. string.Format metodu farklý bir tipteki deðiþkeni baþka bir tipte göstermeye yarar. Nitekim burada int tipindeki her bir deðeri 2 haneli hex deðerler olarak gösterilmiþtir. \cite{k:8}
+
+Böylelikle þifreleme iþlemi tamamlanmýþ olur. En baþýndan beri konuyu ele alýp özetleyecek olursak, þifrelenenmek üzere belge seçildikten sonra seçilen belge görüntü ise önce byte tipine çevrildi ve daha sonra þifrelenmek üzere textBox'a yazdýrýldý. Ayný zamanda þifreleme için þifreleme anahtarýnýn girilmesi saðlandý. Eðer seçilen dosya metin belgesi ise seçilen metin belgesi textBox'a yazdýrýldý. TextBox'daki bu deðerler hex tipine çevrilerek þifrelenmiþ alanda bulunan textBox'a yazdýrýldý ve þifreleme iþlemi tamamlanmýþ oldu. 
+\subsection{Þifreli Metinin Kaydedilmesi}
+Þifreleme iþlemleri tamamlandýktan sonra form ekranýnda bulunan iki KAYDET butonundan sað alttaki ile þifreli metin kaydedilebilmektedir. Kayýt edilen bu þifreli metin daha sonra geri döndürülmek üzere kullanýlacaktýr.
+\newpage
+\section{GERÝ DÖNDÜRME ÝÞLEMLERÝ}
+Bu bölümde RC4 ile þifrelenen þifreli metni tekrar eski haline döndürme iþlemlerinden bahsedilecektir.
+\subsection{Kaydedilen Þifreli Metinin Seçilmesi}
+Þifreleme iþlemleri tamamlandýktan sonra þifreli metin KAYDET butonu ile kaydedildi. Geri döndürme iþlemi yapýlýrken form ekranýnda bulunan GERÝ DÖNDÜRÜLECEK DOSYAYI SEÇ butonu ile þifrelenmiþ metin OpenFileDialog ile seçilerek þifrelenmiþ metin form ekranýna yansýtýlýr. Bu yansýtma iþlemi StreamReader sýnýfý ile Þekil \ref{16}'de gösterildiði gibi gerçekleþmektedir. 
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=3.5cm]{stream} }
+\caption{StreamReader sýnýfýnýn kullanýmý}
+\label{16}
+\end{figure} 
+Þekil \ref{16}'de görülen StreamReader sýnýfý OpenFileDialog ile seçilen metni okur ve form ekranýnda belirtilen yere yazar. Bu aþamadan sonra geri döndürülmesi istenen form ekranýna gelmiþtir. Artýk GERÝ DÖNDÜR butonu ile þifreli metin ilk haline dönüþtürülecektir. 
+\subsection{Geri Döndürme Ýþlemi}
+Þifrelenen metin geri döndürülmek üzere seçildikten sonra geri döndürme iþleminin yapýlabilmesi için girilen anahtar kelimenin þifreleme yapýlýrken kullanýlan anahtar kelime ile eþdeðer olmasý gerekmektedir. Aksi taktirde þifreli metin yeni anahtar kelimeye göre döndürülecektir ve bu da olumsuz sonuç alýnmasýna neden olacaktýr. 
+
+Geri döndürme iþlemi yapýlýrken þifreli metin hex tipinde bir metindi. Öncelikle hex tipindeki metinin stringe çevrilmesi gerekmektedir. Bunun için HexStrToStr metodu Þekil \ref{17}'de gösterildiði gibi kullanýlmýþtýr. \cite{k:9}
+\begin{figure}[H]
+\centering
+\scalebox{1}{
+\includegraphics[width=10.5cm,height=3.5cm]{hextostr} }
+\caption{HexStrToStr metodunun kullanýmý}
+\label{17}
+\end{figure}
+
+Þekil \ref{17}'de gösterilen metod sayesinde hex tipinde þifrelenmiþ olan þifreli metin string tipine dönüþtürülür. Böylelikle geri döndürme iþlemi için son bir aþama kalmýþ olur. String türüne çevrilen metin RC4 sýnýfýna girilen anahtar kelime ile tekrar gönderilir ve  iþlemler sonucunda XOR'lanarak eski haline dönüþtürülmüþ olur. Dönüþtürülen bu düz metin try catch ile iki farklý durum için incelenmektedir. Eðer þifreleme yapýlan dosya bir metin ise geri döndürme iþlemleri sonucunda o metin form ekranýnda belirtilen yere yazdýrýlacaktýr. Ama eðer þifrelenmesi için seçilen dosya bir görüntü ise geri döndürülen metin Base64ToImage metodu ile tekrar bir görüntü haline getirilir ve form ekranýnda bulunan pictureBox'ta gösterilir. Böylelikle seçilmesi muhtemel iki durum içinde geri döndürme iþlemleri tamamlanmýþ olur. 
+
+Geri döndürme iþlemleri tamamlandýktan sonra form ekranýnda gösterilen daha önce 2B Cat Map ile karýþtýrýlmýþ görüntü, form ekranýnýn sol alt kýsmýnda bulunan KAYDET butonu ile tekrar karýþtýrýlýp eski haline getirilmesi için kaydedilmektedir. 
